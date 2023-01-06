@@ -27,6 +27,21 @@ body {
   margin-bottom: 20px;
 }
 
+.header div {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header div h4 {
+  border-bottom: 4px solid green;
+}
+
+.header div span {
+  color: green;
+  font-weight: bold;
+}
+
 .btn {
   display: inline-block;
   background: #000;

@@ -33,6 +33,22 @@ function App() {
       checkin: "08:30 AM",
       checkout: "05:00 PM",
     },
+    {
+      id: 4,
+      firstname: "Bruce",
+      lastname: "Wayne",
+      rollno: "32",
+      checkin: "09:15 AM",
+      checkout: "05:45 PM",
+    },
+    {
+      id: 5,
+      firstname: "Clark",
+      lastname: "Kent",
+      rollno: "12",
+      checkin: "08:40 AM",
+      checkout: "03:00 PM",
+    },
   ])
 
   const addStudents = (student) => {
@@ -52,7 +68,7 @@ function App() {
 
   return (
     <div className="container">
-      <Header showAddStudent={showAddStudent} setShowAdd={setShowAdd}/>
+      <Header students={students} showAddStudent={showAddStudent} setShowAdd={setShowAdd}/>
       {showAddStudent && <AddStudent addStudents={addStudents}/>}
       <List students={students} deleteStudent={deleteStudent}/>
     </div>
