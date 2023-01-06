@@ -16,26 +16,27 @@ function App() {
       checkout: "04:00 PM",
     },
     {
-      id: 1,
-      rollno: "24",
+      id: 2,
+      rollno: "30",
       firstname: "James",
       lastname: "Calloway",
-      checkin: "09:00 AM",
-      checkout: "04:00 PM",
+      checkin: "10:15 AM",
+      checkout: "04:45 PM",
     },
     {
-      id: 1,
-      rollno: "24",
+      id: 3,
+      rollno: "14",
       firstname: "Arthur",
       lastname: "King",
-      checkin: "09:00 AM",
-      checkout: "04:00 PM",
+      checkin: "08:30 AM",
+      checkout: "05:00 PM",
     },
   ])
 
   const addStudents = (student) => {
     const id = Math.floor(Math.random() * 10000) + 1
     const newStudent = { id, ...student}
+    alert(newStudent)
     addStudent([...students, newStudent])
   }
 
