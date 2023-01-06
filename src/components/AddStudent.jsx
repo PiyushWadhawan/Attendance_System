@@ -9,8 +9,39 @@ function AddStudent({ addStudents }) {
     const [inn, setInn] = useState('')
     const [out, setOut] = useState('')
 
+    const onSubmit = (e) => {
+        e.preventDefault()
+
+        if(!fname) {
+            alert("Please enter Firstname")
+        }
+
+        if(!lname) {
+            alert("Please enter Firstname")
+        }
+
+        if(!roll) {
+            alert("Please enter Firstname")
+        }
+
+        if(!inn) {
+            alert("Please enter Firstname")
+        }
+
+        if(!out) {
+            alert("Please enter Firstname")
+        }
+
+        addStudents(fname, lname, roll, inn, out)
+        setFname('')
+        setLname('')
+        setRoll('')
+        setInn('')
+        setOut('')
+    }
+
   return (
-    <form className='add-form' onSubmit={addStudents}>
+    <form className='add-form' onSubmit={onSubmit}>
         <div className="form-control">
             <label>Firstname</label>
             <input type="text" placeholder='Enter firstname' value={fname} onChange={(e) => setFname(e.target.value)}/>

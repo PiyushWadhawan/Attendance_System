@@ -33,8 +33,10 @@ function App() {
     },
   ])
 
-  const addStudents = () => {
-
+  const addStudents = (student) => {
+    const id = Math.floor(Math.random() * 10000) + 1
+    const newStudent = { id, ...student}
+    addStudent([...students, newStudent])
   }
 
   return (
