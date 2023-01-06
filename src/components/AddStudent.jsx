@@ -3,41 +3,41 @@ import { useState } from 'react'
 
 function AddStudent({ addStudents }) {
 
-    const [fname, setFname] = useState('')
-    const [lname, setLname] = useState('')
-    const [roll, setRoll] = useState('')
-    const [inn, setInn] = useState('')
-    const [out, setOut] = useState('')
+    const [firstname, setFname] = useState('')
+    const [lastname, setLname] = useState('')
+    const [rollno, setRoll] = useState('')
+    const [checkin, setInn] = useState('')
+    const [checkout, setOut] = useState('')
 
     const onSubmit = (e) => {
         e.preventDefault()
 
-        if(!fname) {
+        if(!firstname) {
             alert("Please enter Firstname")
             return
         }
 
-        else if(!lname) {
+        else if(!lastname) {
             alert("Please enter Lirstname")
             return
         }
 
-        else if(!roll) {
+        else if(!rollno) {
             alert("Please enter Roll No")
             return
         }
 
-        else if(!inn) {
+        else if(!checkin) {
             alert("Please enter checkin time")
             return
         }
 
-        else if(!out) {
-            alert("Please enter check out")
+        else if(!checkout) {
+            alert("Please enter check checkout")
             return
         }
 
-        addStudents({fname, lname, roll, inn, out})
+        addStudents({firstname, lastname, rollno, checkin, checkout})
         setFname('')
         setLname('')
         setRoll('')
@@ -49,23 +49,23 @@ function AddStudent({ addStudents }) {
     <form className='add-form' onSubmit={onSubmit}>
         <div className="form-control">
             <label>Firstname</label>
-            <input type="text" placeholder='Enter firstname' value={fname} onChange={(e) => setFname(e.target.value)}/>
+            <input type="text" placeholder='Enter firstname' value={firstname} onChange={(e) => setFname(e.target.value)}/>
         </div>
         <div className="form-control">
             <label>Lastname</label>
-            <input type="text" placeholder='Enter lastname' value={lname} onChange={(e) => setLname(e.target.value)}/>
+            <input type="text" placeholder='Enter lastname' value={lastname} onChange={(e) => setLname(e.target.value)}/>
         </div>
         <div className="form-control">
             <label>Roll No</label>
-            <input type="text" placeholder='Enter Roll no' value={roll} onChange={(e) => setRoll(e.target.value)}/>
+            <input type="text" placeholder='Enter Roll no' value={rollno} onChange={(e) => setRoll(e.target.value)}/>
         </div>
         <div className="form-control">
             <label>Checkin Time</label>
-            <input type="text" placeholder='00:00 AM/PM' value={inn} onChange={(e) => setInn(e.target.value)}/>
+            <input type="text" placeholder='00:00 AM/PM' value={checkin} onChange={(e) => setInn(e.target.value)}/>
         </div>
         <div className="form-control">
-            <label>Checkout Time</label>
-            <input type="text" placeholder='00:00 AM/PM' value={out} onChange={(e) => setOut(e.target.value)}/>
+            <label>Checkcheckout Time</label>
+            <input type="text" placeholder='00:00 AM/PM' value={checkout} onChange={(e) => setOut(e.target.value)}/>
         </div>
 
         <input type="submit" value="Enter student" className='btn btn-block'/>
