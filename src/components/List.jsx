@@ -1,7 +1,7 @@
 import React from 'react'
 import Liststyle from './Liststyle'
 
-function List({ students }) {
+function List({ students, deleteStudent }) {
 
   return (
     <div>
@@ -15,7 +15,7 @@ function List({ students }) {
         <h3>Checkout</h3>
       </div>
       {students.map((student) => (
-        <Liststyle key={student.id} firstname={student.firstname} lastname={student.lastname} rollno={student.rollno} checkin={student.checkin} checkout={student.checkout} />
+        <Liststyle key={student.id} id={student.id} firstname={student.firstname} lastname={student.lastname} rollno={student.rollno} checkin={student.checkin} checkout={student.checkout} deleteStudent={deleteStudent}/>
       ))} 
     </div>
   )

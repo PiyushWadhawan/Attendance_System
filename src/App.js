@@ -46,11 +46,15 @@ function App() {
     console.log(setShowAddStudent)
   }
 
+  const deleteStudent = (id) => {
+    addStudent(students.filter((student) => student.id !== id))
+  }
+
   return (
     <div className="container">
       <Header showAddStudent={showAddStudent} setShowAdd={setShowAdd}/>
       {showAddStudent && <AddStudent addStudents={addStudents}/>}
-      <List students={students}/>
+      <List students={students} deleteStudent={deleteStudent}/>
     </div>
   );
 }
