@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 function Button({ color, text, executeTask }) {
 
   return (
-    <button onClick={executeTask} style={{ backgroundColor: color }}className='btn'>
+    <button onClick={executeTask} style={{ backgroundColor: color }} className='btn'>
         {text}
     </button>
   )

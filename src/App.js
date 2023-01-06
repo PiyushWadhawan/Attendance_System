@@ -6,6 +6,8 @@ import AddStudent from './components/AddStudent';
 
 function App() {
 
+  const [showAddStudent, setShowAddStudent] = useState(false)
+
   const [students, addStudent] = useState([
     {
       id: 1,
@@ -36,15 +38,18 @@ function App() {
   const addStudents = (student) => {
     const id = Math.floor(Math.random() * 10000) + 1
     const newStudent = { id, ...student}
-    console.log(student)
     addStudent([...students, newStudent])
-    console.log(students)
+  }
+
+  const setShowAdd = () => {
+    setShowAddStudent(!showAddStudent)
+    console.log(setShowAddStudent)
   }
 
   return (
     <div className="container">
-      <Header/>
-      <AddStudent addStudents={addStudents}/>
+      <Header showAddStudent={showAddStudent} setShowAdd={setShowAdd}/>
+      {showAddStudent && <AddStudent addStudents={addStudents}/>}
       <List students={students}/>
     </div>
   );

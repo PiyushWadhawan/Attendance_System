@@ -1,16 +1,12 @@
 import React from 'react'
 import Button from './Button'
 
-function Header() {
-
-    const executeTask = () => {
-        console.log("Click")
-    }
+function Header({ showAddStudent, setShowAdd}) {
 
   return (
     <header className='header'>
       <h1>Attendance System</h1>
-      <Button color="blue" text="Add" executeTask={executeTask}/>
+      <Button color={showAddStudent? "red": "blue"} text={showAddStudent? "Close": "Add"} executeTask={setShowAdd}/>
     </header>
   )
 }
