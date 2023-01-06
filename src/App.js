@@ -36,7 +36,7 @@ function App() {
   const addStudents = (student) => {
     const id = Math.floor(Math.random() * 10000) + 1
     const newStudent = { id, ...student}
-    alert(newStudent)
+    console.log(newStudent)
     addStudent([...students, newStudent])
   }
 

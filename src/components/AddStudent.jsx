@@ -14,25 +14,30 @@ function AddStudent({ addStudents }) {
 
         if(!fname) {
             alert("Please enter Firstname")
+            return
         }
 
-        if(!lname) {
-            alert("Please enter Firstname")
+        else if(!lname) {
+            alert("Please enter Lirstname")
+            return
         }
 
-        if(!roll) {
-            alert("Please enter Firstname")
+        else if(!roll) {
+            alert("Please enter Roll No")
+            return
         }
 
-        if(!inn) {
-            alert("Please enter Firstname")
+        else if(!inn) {
+            alert("Please enter checkin time")
+            return
         }
 
-        if(!out) {
-            alert("Please enter Firstname")
+        else if(!out) {
+            alert("Please enter check out")
+            return
         }
 
-        addStudents(fname, lname, roll, inn, out)
+        addStudents({fname, lname, roll, inn, out})
         setFname('')
         setLname('')
         setRoll('')
